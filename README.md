@@ -12,6 +12,7 @@ Requirements
 * Cudnn 9.0
 * Python 3.6.5
 * Numpy 1.14.3
-
+Training
+* Download pretrained vgg-19.npy [here](https://pan.baidu.com/s/1U6J9XenDOnUvkEzj0ZBmxg). Code: yiov
 ## Contact and Questions
 Contact: Zhengkun Rong. Email: 18642840242@163.com or rzk911113@mail.dlut.edu.cn
