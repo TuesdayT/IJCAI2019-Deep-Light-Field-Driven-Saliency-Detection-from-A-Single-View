@@ -14,10 +14,16 @@ Requirements
 * Numpy 1.14.3
 
 Training
-* Download pretrained vgg-19.npy [here](https://pan.baidu.com/s/1U6J9XenDOnUvkEzj0ZBmxg). Code: yiov
+* Download pretrained vgg-19.npy from [here](https://pan.baidu.com/s/1U6J9XenDOnUvkEzj0ZBmxg). Code: yiov
 * Hyperparameter: is_training=1
 * Modify your path of training dataset
 * Run Main_model
 * cd 'your path'/logs, tensorboard --logdir=train
+
+Testing
+* Download pretrained model from [here](https://pan.baidu.com/s/1cm5nkdKVHU2vCIqgzlmLMw). Code: eu72
+* Hyperparameter: is_training=0
+* Modify your path of testing dataset
+* Run Main_model
 ## Contact and Questions
 Contact: Zhengkun Rong. Email: 18642840242@163.com or rzk911113@mail.dlut.edu.cn
