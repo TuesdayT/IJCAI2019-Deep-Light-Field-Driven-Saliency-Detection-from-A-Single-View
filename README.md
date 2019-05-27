@@ -15,5 +15,8 @@ Requirements
 
 Training
 * Download pretrained vgg-19.npy [here](https://pan.baidu.com/s/1U6J9XenDOnUvkEzj0ZBmxg). Code: yiov
+* Hyperparameter: is_training=1
+* Modify your path of training dataset
+* Run Main_model
 ## Contact and Questions
 Contact: Zhengkun Rong. Email: 18642840242@163.com or rzk911113@mail.dlut.edu.cn
