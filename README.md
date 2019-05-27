@@ -28,5 +28,7 @@ Testing
 * Hyperparameter: is_training=0
 * Modify your path of testing dataset
 * Run Main_model to generate saliency maps, synthesized mutli-view images and depth maps
+## Saliency map
+Saliency maps of this paper can be downloaded [BaiduYun]()
 ## Contact and Questions
 Contact: Zhengkun Rong. Email: 18642840242@163.com or rzk911113@mail.dlut.edu.cn
