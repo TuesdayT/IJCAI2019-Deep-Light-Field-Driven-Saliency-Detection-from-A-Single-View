@@ -2,7 +2,10 @@
 ## Introduction
 Accepted paper in IJCAI2019, 'Deep Light-Field-Driven Saliency Detection from A Single View', [Yongri Piao](http://ice.dlut.edu.cn/yrpiao/), Zhengkun Rong, Miao Zhang, Xiao Li and [Huchuan Lu](http://ice.dlut.edu.cn/lu/publications.html).
 
-## **The source code and light field saliency detection dataset are coming soon.**
+## Dataset: LF_Lens
+* Dataset can be downloaded from [here](https://pan.baidu.com/s/1hvrTL4PQp-PZ6QZEl5fH7Q). Code: 9c7k
+* Training set: 1100 samples before data augmentation
+* Testing set: 480 samples
 
 ## Usage Instructions
 Requirements
