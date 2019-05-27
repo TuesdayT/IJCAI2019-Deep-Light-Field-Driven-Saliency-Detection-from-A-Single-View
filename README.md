@@ -29,6 +29,6 @@ Testing
 * Modify your path of testing dataset
 * Run Main_model to generate saliency maps, synthesized mutli-view images and depth maps
 ## Saliency map
-Saliency maps of this paper can be downloaded [BaiduYun]()
+Saliency maps of this paper can be downloaded [BaiduYun](https://pan.baidu.com/s/1KXG7xRv7WOcSj_NUmbz8cA). Code: 2jl0
 ## Contact and Questions
 Contact: Zhengkun Rong. Email: 18642840242@163.com or rzk911113@mail.dlut.edu.cn
