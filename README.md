@@ -4,11 +4,11 @@ Accepted paper in IJCAI2019, 'Deep Light-Field-Driven Saliency Detection from A 
 
 ## Dataset: DUTLF
 * Each scene of this dataset consists of an all-focus image, a stack of focal slices, multi-view images, a depth map and a corresponding ground truth.
-* The dataset will be expanded to about 3000 real scenes.
-* We are preparing it and will make it publicly available soon.
+* The dataset will be expanded to 3000 or so real scenes.
+* We are working on it and will make it publicly available soon.
 
 ## Dataset: DUTLF-MV
-* DUTLF-MV is part of DUTLF.
+* DUTLF-MV is part of DUTLF, which consists of 1580 real scenes.
 * Each scene of this dataset consists of an all-focus image, multi-view images and a corresponding ground truth.
 * Dataset can be downloaded from [here](https://pan.baidu.com/s/1hvrTL4PQp-PZ6QZEl5fH7Q). Code: 9c7k
 * Training set: 1100 samples before data augmentation
