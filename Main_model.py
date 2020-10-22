@@ -892,7 +892,7 @@ else:   # Test
         for i in range(480):
             print(i)
             filename = test_center_filenames[i]
-            imgname = filename[1:4]
+            imgname = filename[-9:-4]
 
             c_test = sess.run(center_test)
 
