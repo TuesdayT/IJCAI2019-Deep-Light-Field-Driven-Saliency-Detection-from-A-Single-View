@@ -912,22 +912,6 @@ else:   # Test
         = forward_model(center_im, lfsize, disp_mult)
 
     pred_salmap = tf.nn.sigmoid(pre1)
-
-    ray_u_depths = tf.reshape(tf.transpose(ray_u_depths, perm=[0, 3, 1, 2]), [batchsize * lfsize[2], lfsize[0], lfsize[1], 1])
-    ray_v_depths = tf.reshape(tf.transpose(ray_v_depths, perm=[0, 3, 1, 2]), [batchsize * lfsize[3], lfsize[0], lfsize[1], 1])
-    salmap_p1_u = tf.reshape(tf.transpose(tf.expand_dims(tf.nn.softmax(salmap_p1_u, axis=4)[:, :, :, :, 1], 4), perm=[0, 3, 1, 2, 4]),
-                            [batchsize * lfsize[2], lfsize[0], lfsize[1], 1])
-    salmap_p1_v = tf.reshape(tf.transpose(tf.expand_dims(tf.nn.softmax(salmap_p1_v, axis=4)[:, :, :, :, 1], 4), perm=[0, 3, 1, 2, 4]),
-                            [batchsize * lfsize[3], lfsize[0], lfsize[1], 1])
-    shear_u_p1 = tf.reshape(tf.transpose(tf.expand_dims(tf.nn.softmax(shear_u_p1, axis=4)[:, :, :, :, 1], axis=4), perm=[0, 3, 1, 2, 4]),
-                           [batchsize * lfsize[2], lfsize[0], lfsize[1], 1])
-    shear_v_p1 = tf.reshape(tf.transpose(tf.expand_dims(tf.nn.softmax(shear_v_p1, axis=4)[:, :, :, :, 1], axis=4), perm=[0, 3, 1, 2, 4]),
-                           [batchsize * lfsize[3], lfsize[0], lfsize[1], 1])
-    lf_shear_u = tf.reshape(tf.transpose(lf_shear_u, perm=[0, 3, 1, 2, 4]),
-                           [batchsize * lfsize[2], lfsize[0], lfsize[1], 3])
-    lf_shear_v = tf.reshape(tf.transpose(lf_shear_v, perm=[0, 3, 1, 2, 4]),
-                          [batchsize * lfsize[3], lfsize[0], lfsize[1], 3])
-
     saver = tf.train.Saver()
 
     with tf.Session() as sess:
@@ -954,57 +938,6 @@ else:   # Test
             salmap_name = "%s/%s.png" % (MapRoot, imgname)
             salmap = imresize(salmap, [256, 256], interp='bilinear')
             plt.imsave(salmap_name, salmap, cmap='gray')
-
-
-            for j in range(7):
-
-                salmap_u_j = np.reshape(salmap_u[j, :, :, :], [center_size[0], center_size[1]])
-                salmap_u_j = np.float32(salmap_u_j)
-                salmap_u_j_name = "%s/%s_u_%s.png" % (salmap_u_Root, imgname, j)
-                salmap_u_j = imresize(salmap_u_j, [400, 590], interp='bilinear')
-                plt.imsave(salmap_u_j_name, salmap_u_j, cmap='gray')
-
-                salmap_v_j = np.reshape(salmap_v[j, :, :, :], [center_size[0], center_size[1]])
-                salmap_v_j = np.float32(salmap_v_j)
-                salmap_v_j_name = "%s/%s_v_%s.png" % (salmap_v_Root, imgname, j)
-                salmap_v_j = imresize(salmap_v_j, [400, 590], interp='bilinear')
-                plt.imsave(salmap_v_j_name, salmap_v_j, cmap='gray')
-
-                depth_v_j = np.reshape(depth_v[j, :, :, :], [center_size[0], center_size[1]])
-                depth_v_j = np.float32(depth_v_j)
-                depth_v_j_name = "%s/%s_v_%s.png" % (depth_v_Root, imgname, j)
-                depth_v_j = imresize(depth_v_j, [400, 590], interp='bilinear')
-                plt.imsave(depth_v_j_name, depth_v_j, cmap='gray')
-
-                depth_u_j = np.reshape(depth_u[j, :, :, :], [center_size[0], center_size[1]])
-                depth_u_j = np.float32(depth_u_j)
-                depth_u_j_name = "%s/%s_u_%s.png" % (depth_u_Root, imgname, j)
-                depth_u_j = imresize(depth_u_j, [400, 590], interp='bilinear')
-                plt.imsave(depth_u_j_name, depth_u_j, cmap='gray')
-
-                shear_u_j = np.reshape(shear_u[j, :, :, :], [center_size[0], center_size[1]])
-                shear_u_j = np.float32(shear_u_j)
-                shear_u_j_name = "%s/%s_u_%s.png" % (shear_u_Root, imgname, j)
-                shear_u_j = imresize(shear_u_j, [400, 590], interp='bilinear')
-                plt.imsave(shear_u_j_name, shear_u_j, cmap='gray')
-
-                shear_v_j = np.reshape(shear_v[j, :, :, :], [center_size[0], center_size[1]])
-                shear_v_j = np.float32(shear_v_j)
-                shear_v_j_name = "%s/%s_v_%s.png" % (shear_v_Root, imgname, j)
-                shear_v_j = imresize(shear_v_j, [400, 590], interp='bilinear')
-                plt.imsave(shear_v_j_name, shear_v_j, cmap='gray')
-
-                shear_u_lf_j = np.reshape(shear_u_lf[j, :, :, :], [center_size[0], center_size[1], 3])
-                shear_u_lf_j = np.float32(shear_u_lf_j)
-                shear_u_lf_j_name = "%s/%s_u_%s.png" % (shear_u_lf_Root, imgname, j)
-                shear_u_lf_j = imresize(shear_u_lf_j, [256, 256], interp='bilinear')
-                plt.imsave(shear_u_lf_j_name, shear_u_lf_j, format='png')
-
-                shear_v_lf_j = np.reshape(shear_v_lf[j, :, :, :], [center_size[0], center_size[1], 3])
-                shear_v_lf_j = np.float32(shear_v_lf_j)
-                shear_v_lf_j_name = "%s/%s_u_%s.png" % (shear_v_lf_Root, imgname, j)
-                shear_v_lf_j = imresize(shear_v_lf_j, [256, 256], interp='bilinear')
-                plt.imsave(shear_v_lf_j_name, shear_v_lf_j, format='png')
 
         coord.request_stop()
         coord.join(threads)
