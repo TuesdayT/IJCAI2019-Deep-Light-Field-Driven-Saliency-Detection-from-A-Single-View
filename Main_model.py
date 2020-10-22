@@ -866,38 +866,6 @@ else:   # Test
     if not os.path.exists(MapRoot):
         os.mkdir(MapRoot)
 
-    depth_u_Root = './Test/depth_u'
-    if not os.path.exists(depth_u_Root):
-        os.mkdir(depth_u_Root)
-
-    depth_v_Root = './Test/depth_v'
-    if not os.path.exists(depth_v_Root):
-        os.mkdir(depth_v_Root)
-
-    salmap_u_Root = './Test/salmap_u'
-    if not os.path.exists(salmap_u_Root):
-        os.mkdir(salmap_u_Root)
-
-    salmap_v_Root = './Test/salmap_v'
-    if not os.path.exists(salmap_v_Root):
-        os.mkdir(salmap_v_Root)
-
-    shear_u_Root = './Test/shear_u'
-    if not os.path.exists(shear_u_Root):
-        os.mkdir(shear_u_Root)
-
-    shear_v_Root = './Test/shear_v'
-    if not os.path.exists(shear_v_Root):
-        os.mkdir(shear_v_Root)
-
-    shear_u_lf_Root = './Test/shear_u_lf'
-    if not os.path.exists(shear_u_lf_Root):
-        os.mkdir(shear_u_lf_Root)
-
-    shear_v_lf_Root = './Test/shear_v_lf'
-    if not os.path.exists(shear_v_lf_Root):
-        os.mkdir(shear_v_lf_Root)
-
     test_center_path = 'H:\LF_Lens\LF_Lens_256(7)\Test\center'  # path to training examples
 
     test_center_filenames = [os.path.join(test_center_path, f) for f in os.listdir(test_center_path) if
